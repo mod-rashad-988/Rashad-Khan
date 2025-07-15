@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TechRashad - CorelDraw Design Gallery</title>
+  <title>CorelDraw Template Library by Mohd Rashad</title>
+  <meta name="description" content="Free downloadable CorelDraw templates for business, branding & marketing. Created by Mohd Rashad.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
+    :root {
+      --bg-dark: #0e0e2c;
+      --bg-light: #1e1e3f;
+      --accent: #6c5ce7;
+      --white: #fff;
+      --text-light: #ccc;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,9 +22,287 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0e0e2c;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background-color: var(--bg-dark);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    nav a {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--accent);
+    }
+
+    .get-in-touch {
+      background: var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .hero {
+      background-image: url('images/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-blend-mode: overlay;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      font-size: 1rem;
+      color: #ddd;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .search-form {
+      margin: 1.5rem auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      max-width: 600px;
+    }
+
+    .search-form input {
+      padding: 0.7rem 1rem;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .search-form button {
+      padding: 0.7rem 1.2rem;
+      background: var(--accent);
       color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: 0.3s;
+    }
+
+    .search-form button:hover {
+      background-color: #5848d2;
+    }
+
+    .hero .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .hero .buttons a {
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .btn-light {
+      background: white;
+      color: black;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .gallery {
+      background-color: var(--bg-light);
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .design-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .design-item {
+      background: #2d2d54;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .design-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .design-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .design-item h3 {
+      margin: 1rem 1rem 0.5rem;
+    }
+
+    .design-item p {
+      margin: 0 1rem 1rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .design-item a {
+      display: inline-block;
+      margin: 0 1rem 1.2rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      border-radius: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .design-item a:hover {
+      background: #5848d2;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 1rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 3rem 1rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+
+      .design-grid {
+        gap: 1.2rem;
+      }
+
+      .design-item p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🌐 TECHRASHAD</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+    <a href="#gallery" class="get-in-touch">Download Files</a>
+  </header>
+
+  <section class="hero">
+    <h1>CorelDraw Template Library by Mohd Rashad</h1>
+    <p>Explore high-end editable templates for branding, marketing & events — free to download.</p>
+
+    <form class="search-form" onsubmit="event.preventDefault(); alert('Search functionality coming soon!');">
+      <input type="text" placeholder="Search templates (e.g. logo, flyer, poster)" />
+      <button type="submit"><i class="fas fa-search"></i> Search</button>
+    </form>
+
+    <div class="buttons">
+      <a href="https://wa.me/91XXXXXXXXXX" class="btn-light" target="_blank" rel="noopener noreferrer">Let’s Talk</a>
+      <a href="#gallery" class="btn-primary">View Templates</a>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Download CorelDraw Designs</h2>
+    <div class="design-grid">
+      <div class="design-item">
+        <img src="images/business-card.jpg" alt="Business Card Design" loading="lazy">
+        <h3>Business Card</h3>
+        <p>Professional & clean CorelDraw business card template.</p>
+        <a href="downloads/business-card.cdr" download>Download</a>
+      </div>
+
+      <div class="design-item">
+        <img src="images/flyer-template.jpg" alt="Flyer Template" loading="lazy">
+        <h3>Flyer Template</h3>
+        <p>Colorful flyer design, perfect for marketing & promotion.</p>
+        <a href="downloads/flyer-template.cdr" download>Download</a>
+
     }
 
     header {
