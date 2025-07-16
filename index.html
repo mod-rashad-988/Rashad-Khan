@@ -21,6 +21,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: var(--bg-dark);
@@ -159,18 +163,25 @@
       color: white;
     }
 
-    .gallery {
+    .section {
       background-color: var(--bg-light);
       padding: 4rem 1rem;
       text-align: center;
     }
 
-    .gallery h2 {
+    .section h2 {
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
-    .design-grid {
+    .section p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    .gallery .design-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
@@ -258,21 +269,21 @@
   <header>
     <div class="logo">🌐 TECHRASHAD</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
     </nav>
     <a href="#gallery" class="get-in-touch">Download Files</a>
   </header>
 
-  <section class="hero">
+  <section id="home" class="hero">
     <h1>CorelDraw Template Library by Mohd Rashad</h1>
     <p>Explore high-end editable templates for branding, marketing & events — free to download.</p>
 
-    <form class="search-form" onsubmit="event.preventDefault(); alert('Search functionality coming soon!');">
+    <form class="search-form">
       <input type="text" placeholder="Search templates (e.g. logo, flyer, poster)" />
       <button type="submit"><i class="fas fa-search"></i> Search</button>
     </form>
@@ -283,7 +294,17 @@
     </div>
   </section>
 
-  <section id="gallery" class="gallery">
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>TECHRASHAD is a free CorelDraw template library created by Mohd Rashad to support designers, startups, and businesses with editable branding resources.</p>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Services</h2>
+    <p>We offer a range of downloadable CorelDraw templates including business cards, flyers, posters, and logos. Custom design requests are also welcome.</p>
+  </section>
+
+  <section id="gallery" class="gallery section">
     <h2>Download CorelDraw Designs</h2>
     <div class="design-grid">
 
@@ -318,9 +339,45 @@
     </div>
   </section>
 
+  <section id="blog" class="section">
+    <h2>Blog</h2>
+    <p>Coming soon: Design tutorials, tips, and updates from Mohd Rashad to help you get the most out of CorelDraw.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Have questions or need custom work? Reach out via WhatsApp or email below:</p>
+    <a href="https://wa.me/91XXXXXXXXXX" class="btn-primary" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+  </section>
+
   <footer>
     © 2025 TECHRASHAD | Designed by Mohd Rashad | All rights reserved.
   </footer>
+
+  <!-- ✅ Search Functionality Script -->
+  <script>
+    document.querySelector(".search-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const input = this.querySelector("input").value.trim().toLowerCase();
+      const items = document.querySelectorAll(".design-item");
+
+      if (input === "") {
+        items.forEach(item => item.style.display = "block");
+        return;
+      }
+
+      items.forEach(item => {
+        const title = item.querySelector("h3").textContent.toLowerCase();
+        const desc = item.querySelector("p").textContent.toLowerCase();
+
+        if (title.includes(input) || desc.includes(input)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
